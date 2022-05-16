@@ -56,14 +56,15 @@ const quote8 = {
 };
 
 const quote9 = {
-    quote: "Every great developer you know got there by solving problems they were unqualified to solve until they actually did it.",
-    source: "Patrick McKenzie",
+    quote: "Persistence is very important. You should not give up unless you are forced to give up.",
+    source: "Elon Musk",
     citation: "Twitter",
-    year: "2016"
+    year: "2018"
 };
 
 // add all objects into the array
 quotes.push(quote0, quote1, quote2, quote3, quote4, quote5, quote6, quote7, quote8, quote9);
+
 
 /***
  * `getRandomQuote` function
@@ -77,6 +78,16 @@ function getRandomQuote() {
     the `quotes` array, and store it in a variable */
     let randomQuote = quotes[randomNum];
 
+    /* remove the used object from the array; 
+       when the last object is displayed, remove it and add all objects back into the array;
+       this avoid quotes being displayed repeatedly, and quotes will be reset once all are displayed*/
+    if (quotes.length > 1) {
+        quotes.splice(randomNum, 1);
+    } else {
+        quotes.splice(randomNum, 1);
+        quotes.push(quote0, quote1, quote2, quote3, quote4, quote5, quote6, quote7, quote8, quote9);
+    }
+    
     // 3. Return the variable storing the random quote object generate a random number ranging from 0 to 9
     return randomQuote;
 }
