@@ -80,7 +80,7 @@ function getRandomQuote() {
 
     /* remove the used object from the array; 
        when the last object is displayed, remove it and add all objects back into the array;
-       this avoid quotes being displayed repeatedly, and quotes will be reset once all are displayed*/
+       this avoid quotes being frequently displayed repeatedly, and quotes will be reset once all are displayed*/
     if (quotes.length > 1) {
         quotes.splice(randomNum, 1);
     } else {
